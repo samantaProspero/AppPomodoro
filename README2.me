@@ -1,0 +1,74 @@
+#Instalações aplicativo mobile:
+- yarn init
+
+- yarn add @react-navigation/native
+
+- se usar expo: 
+  - expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+  - yarn add @react-navigation/stack
+
+- se não usar expo: 
+yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+- instalar: yarn add @react-navigation/stack
+- importar: 
+    - import 'react-native-gesture-handler';
+
+# Em src/routes.js:
+
+- import React from 'react';
+- import { createStackNavigator } from '@react-navigation/stack';
+- e executa com: const AppStack = createStackNavigator();
+- importa as páginas 
+- const Routes = () => (
+  <AppStack.Navigator>
+    <AppStack.Screen name="" component={}/>
+    <AppStack.Screen name="" component={}/>
+  </AppStack.Navigator>
+  )
+  export default Routes;
+
+# Em App.js:
+
+- import { NavigationContainer } from '@react-navigation/native';
+- importa Routes;
+- Coloca NavigationContainer por volta das rotas
+
+
+# Reiniciar aplicativo: yarn start
+
+# Recursos: 
+
+- tela em degradê: 
+  No expo: ver LinearGradient no site do expo
+  instalar: 
+  expo install expo-linear-gradient 
+  no component:
+  - import { LinearGradient } from 'expo-linear-gradient';
+  e usa um exemplo do site:
+   <LinearGradient
+          colors={['rgba(0,0,0,0.8)', 'transparent']}
+          style={}
+        />
+
+- Uso de ícones: 
+  No expo já vem instalado o pacote de ícones,
+  import { MaterialIcons } from '@expo/vector-icons';
+
+  <TouchableOpacity style={styles.button} onPress={navigateToTimer}>
+    <MaterialIcons name="chevron-right" size={32} color="#FFF" />
+  </TouchableOpacity>
+
+- Círculo de progresso do timer: pesquisa google 'react native progressive circle';
+- expo install react-native-svg
+- yarn add react-native-circular-progress
+
+import { AnimatedCircularProgress } from 'react-native-circular-progress';
+
+<AnimatedCircularProgress
+  size={120}
+  width={15}
+  fill={100}
+  tintColor="#00e0ff"
+  onAnimationComplete={() => console.log('onAnimationComplete')}
+  backgroundColor="#3d5875" />
+
