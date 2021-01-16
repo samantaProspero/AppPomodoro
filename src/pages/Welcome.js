@@ -17,7 +17,7 @@ const Welcome = () => {
           style={styles.container}
         >
       <Image source={banner} style={styles.banner}/>
-      <Text style={styles.textWelcome}>Staying focused at work isn't easy!</Text>
+      <Text style={styles.textWelcome}>Aplicativo Pomodora</Text>
       <TouchableOpacity style={styles.button} onPress={navigateToTimer} >
         <MaterialIcons name="chevron-right" size={32} color="#FFF" />
       </TouchableOpacity>

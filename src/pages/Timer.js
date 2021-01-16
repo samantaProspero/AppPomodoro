@@ -42,7 +42,7 @@ const Timer = () => {
       <AnimatedCircularProgress
           size={300}
           width={30}
-          fill={(secondsEllapsed * 100)/120}
+          fill={(secondsEllapsed * 100)/1500}
           tintColor="#2E5B9A"
           backgroundColor="#FFF">
           {() => (
